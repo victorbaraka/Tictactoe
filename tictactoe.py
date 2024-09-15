@@ -50,29 +50,15 @@ class TicTactoe:
                 return True
             else:
                 return False
-            
-            def swap_player_turn(self, player):
-                return 'X' if player == 'O' else 'O'
-            
-            def show_board(self):
-                for row in self.board:
-                    for item in row:
-                        print(item, end ='')
-                        print()
-            
-            def start(self):
-                self.create_board()
-                player ='X' if self.get_random_first_player() == 1 else 'O'
-                game_over = False
 
-              
+    def is_board_filled(self):
+        for row in self.board:
+            for item in row:
+                if item == '-':
+                    return False
+                else:
+                    return True
+    
+    def swap_player_turn
 
-                        
-
-  
-
-
-
-
-
-        
+   
