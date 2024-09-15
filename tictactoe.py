@@ -16,7 +16,7 @@ class TicTactoe:
                 row.append("-")
                 self.board.append(row)
     
-    
+    # choosing the first player randomly
     def get_random_first_player(self):
         return random.randint(0,1)
     
@@ -24,12 +24,13 @@ class TicTactoe:
     def fix_spot(self,row,col,player):
         self.board [row][col] = player
        
+       #function to determine if the player has won
     def player_has_won (self,player):
         n = len(self.board)
-    board_values = set()
+        board_values = set()
 
         #check rows
-    for i in range(n):
+        for i in range(n):
             for j in range (n):
                 board_values.add(self.board[i][j])
                 if board_values == {player}:
@@ -38,7 +39,7 @@ class TicTactoe:
                     board_values.clear()
 
         #check cols
-    for i in range (n):
+        for i in range (n):
             for j in range (n):
                 board_values.add(self.board[j][i])
                 if  board_values == {player}:
@@ -47,9 +48,9 @@ class TicTactoe:
                     board_values.clear()
 
         #check diagonals
-    for i in range(n):
+        for i in range(n):
             board_values.add(self.board[i][i])
-            if board_values == {player}
+            if board_values == {player}:
                 return True
             else:
                 board_values.clear()
@@ -67,8 +68,7 @@ class TicTactoe:
             for item in row:
                 if item == '-':
                     return False
-          
-          return True
+        return True
     
     def swap_player_turn(self, player):
         return 'X' if player == 'O' else 'O'
@@ -77,7 +77,7 @@ class TicTactoe:
         for row in self.board:
             for item in row:
                 print (item, end= ' ')
-                print()
+            print()
 
     def start(self):
         self.create_board()
