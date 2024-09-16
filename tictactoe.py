@@ -9,11 +9,11 @@ class TicTactoe:
         self.board = []
 
 #creating the board layout
-    def create_board (self):
+    def create_board(self):
         for i in range (3):
             row = []
             for j in range (3):
-                row.append("-")
+                row.append('-')
             self.board.append(row)
     
     # choosing the first player randomly
@@ -42,6 +42,7 @@ class TicTactoe:
         for i in range (n):
             for j in range (n):
                 board_values.add(self.board[j][i])
+
                 if  board_values == {player}:
                     return True
                 else :
@@ -50,18 +51,18 @@ class TicTactoe:
         #check diagonals
         for i in range(n):
             board_values.add(self.board[i][i])
-            if board_values == {player}:
+        if board_values == {player}:
                 return True
-            else:
+        else:
                 board_values.clear()
 
-            board_values.add(self.board[0][2])
-            board_values.add(self.board[1][1])
-            board_values.add(self.board[2][0])
-            if board_values == {player}:
-                return True
-            else:
-                return False
+        board_values.add(self.board[0][2])
+        board_values.add(self.board[1][1])
+        board_values.add(self.board[2][0])
+        if board_values == {player}:
+            return True
+        else:
+            return False
 
     def is_board_filled(self):
         for row in self.board:
@@ -116,9 +117,9 @@ class TicTactoe:
             except ValueError as err:
                 print (err)
 
-                print()
-                self.show_board()
+        print()
+        self.show_board()
 
 if __name__ == '__main__':
-    tic_tac_toe = TicTactoe()
-    tic_tac_toe.start()  
+ tic_tac_toe = TicTactoe()
+ tic_tac_toe.start()  
